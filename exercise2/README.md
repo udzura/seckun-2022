@@ -38,7 +38,7 @@ https://containers.github.io/youki/user/basic_setup.html
 
 * いわゆるApple Silicon Macの上の仮想マシンでビルドする際は、リポジトリの `./scripts/build.sh` ファイルの以下の行を書き換えるとビルドが通過します。
 
-```
+```diff
 diff --git a/scripts/build.sh b/scripts/build.sh
 index ba2e2e0..657c455 100755
 --- a/scripts/build.sh
