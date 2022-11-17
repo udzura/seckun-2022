@@ -63,11 +63,17 @@ https://containers.github.io/youki/user/basic_usage.html
 * その状態でのプロセスツリーはどうなっていますか？
   * youki 経由のコンテナであることはどう解るだろうか？
 
-## 2.3.x 発展: crunのインストール
+## 2.3.x 発展: crun/gVisorのインストール
 
-* さらに別の低レベルランタイム「crun」を用います。
-* インストール/ビルドは公式のREADMEの通りです
+ここから先は講師も手順を検証していませんが、一緒にトラブルを解決できればと思います。
+
+* さらに別の低レベルランタイムを用います。
+* crun
+  * インストール/ビルドは公式のREADMEの通りです
   * https://github.com/containers/crun#readme
+* gvisor
+  * 同じく公式のドキュメントをご参照ください
+  * https://gvisor.dev/docs/user_guide/install/
 * docker 経由で動かす場合は、youkiのドキュメントの手順が参考になります。例えば以下のようになるでしょう。
 
 ```
