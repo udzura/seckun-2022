@@ -25,7 +25,7 @@ www-data   39349  0.0  0.0 1998448 2944 ?        Sl   22:01   0:00      \_ httpd
 
 * その上で、それぞれの層のプログラムが何者かを調査しましょう。
 
-## 2.3. youkiのインストール(x86_64環境の場合)
+## 2.3. youkiのインストール
 
 * 公式の手順に従い、コンテナランタイム「youki」をビルド、インストールしてください。
 
@@ -63,9 +63,9 @@ https://containers.github.io/youki/user/basic_usage.html
 * その状態でのプロセスツリーはどうなっていますか？
   * youki 経由のコンテナであることはどう解るだろうか？
 
-## 2.3' crunのインストール(aarch64などの場合)
+## 2.3.x 発展: crunのインストール
 
-* youki が動作しない場合があるようなので、別の低レベルランタイム「crun」を用います。
+* さらに別の低レベルランタイム「crun」を用います。
 * インストール/ビルドは公式のREADMEの通りです
   * https://github.com/containers/crun#readme
 * docker 経由で動かす場合は、youkiのドキュメントの手順が参考になります。例えば以下のようになるでしょう。
@@ -78,9 +78,19 @@ $ docker run -it --rm --runtime crun hello-world
 
 * 同様に、docker+runcと色々比較してみましょう。
 
-## 2.3.おまけ
+## 2.3.y 大発展おまけ
 
 * podmanについて以下を調査してみましょう。
   * インストール
   * httpd コンテナの立ち上げ方
   * ランタイムの切り替え方(crun/youki/...)と確認方法
+
+----
+
+## トラブルシュート
+
+* youkiが動かない
+* caps error: PR_CAPBSET_DROP failure: Invalid argument (os error 22) というエラーが出た
+
+環境が間違って Ubuntu 20.04 である可能性があります。youkiはおそらく Linux 5.8 以前では動作しません。
+
