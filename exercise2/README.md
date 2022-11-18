@@ -32,7 +32,7 @@ www-data   39349  0.0  0.0 1998448 2944 ?        Sl   22:01   0:00      \_ httpd
 https://containers.github.io/youki/user/basic_setup.html
 
 * 正直いくつか罠があります。
-  * Rustのツールセットに暗黙に依存しています。ドキュメントで読み飛ばしがちですが、　　https://www.rust-lang.org/ja/tools/install　でインストールできます
+  * Rustのツールセットに暗黙に依存しています。ドキュメントで読み飛ばしがちですが、　[Rust公式サイトの手順](https://www.rust-lang.org/ja/tools/install)でインストールできます
   * cloneに失敗する際は、 https:// 始まりの git URL を試してください
   * `make release-build` の方が確実に動くバイナリかも？
 
