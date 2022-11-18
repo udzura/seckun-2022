@@ -80,5 +80,5 @@ $ docker run -it --rm --runtime crun hello-world
 * youkiが動かない
 * caps error: PR_CAPBSET_DROP failure: Invalid argument (os error 22) というエラーが出た
 
-環境が間違って Ubuntu 20.04 である可能性があります。youkiはおそらく Linux 5.8 以前では動作しません。
+環境が間違って Ubuntu 20.04 である可能性があります。~youkiはおそらく Linux 5.8 以前では動作しません~ 最新mainでは直っています。
 
