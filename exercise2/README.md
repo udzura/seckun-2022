@@ -32,27 +32,9 @@ www-data   39349  0.0  0.0 1998448 2944 ?        Sl   22:01   0:00      \_ httpd
 https://containers.github.io/youki/user/basic_setup.html
 
 * 正直いくつか罠があります。
-  * Rustのツールセットに暗黙に依存しています。　　https://www.rust-lang.org/ja/tools/install　でインストールできます
+  * Rustのツールセットに暗黙に依存しています。ドキュメントで読み飛ばしがちですが、　　https://www.rust-lang.org/ja/tools/install　でインストールできます
   * cloneに失敗する際は、 https:// 始まりの git URL を試してください
   * `make release-build` の方が確実に動くバイナリかも？
-
-* いわゆるApple Silicon Macの上の仮想マシンでビルドする際は、リポジトリの `./scripts/build.sh` ファイルの以下の行を書き換えるとビルドが通過します。
-
-```diff
-diff --git a/scripts/build.sh b/scripts/build.sh
-index ba2e2e0..657c455 100755
---- a/scripts/build.sh
-+++ b/scripts/build.sh
-@@ -10,7 +10,7 @@ usage_exit() {
- }
- 
- VERSION=debug
--TARGET=x86_64-unknown-linux-gnu
-+TARGET=aarch64-unknown-linux-gnu
- RUNTIMETEST_TARGET="$ROOT/runtimetest-target"
- while getopts f:ro:h OPT; do
-     case $OPT in
-```
 
 * Docker において OCI 低レベルランタイムはどのように置き換えればいいか、設定を調査してください。ヒントはyoukiの公式ドキュメントです。
 
